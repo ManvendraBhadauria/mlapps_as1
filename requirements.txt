@@ -1,1 +1,8 @@
+python
+streamlit
+pandas
+numpy
+plotly
+warnings
+datetime
 
