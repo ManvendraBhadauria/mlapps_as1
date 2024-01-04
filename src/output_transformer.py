@@ -48,7 +48,7 @@ def make_graph(filtered_data, date_min, date_max):
         xaxis_title="Month",
         yaxis_title="Volume",
         xaxis={"type": "category"},
-        width=1125,
+        width=1000,
     )
 
     return fig
