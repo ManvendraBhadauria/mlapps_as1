@@ -8,6 +8,7 @@ from src.style import css_code
 import datetime
 import plotly.express as px
 import plotly.graph_objects as go
+from pathlib import Path as pt
 
 
 st.set_page_config(
@@ -25,7 +26,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-df = pd.read_csv(r".\data\Input_Sales_Data_v2.csv", index_col="Id")
+home_path = pt.cwd()
+df = pd.read_csv(home_path / "data\Input_Sales_Data_v2.csv", index_col="Id")
 data = pd.DataFrame(preprocess(df))
 
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
