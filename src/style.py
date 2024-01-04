@@ -58,5 +58,9 @@ padding-bottom : 5px;
 padding-top:7px;
 }
 
+[class="eyeqlp51 st-emotion-cache-fblp2m ex0cdmw0"]{
+color:white;
+}
+
 </style>
 """
