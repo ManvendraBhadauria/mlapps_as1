@@ -36,7 +36,7 @@ date_min = data["Date"].min().date()
 date_max = data["Date"].max().date()
 
 with st.sidebar:
-    st.image(r"assets\logo.png")
+    st.image("./assets/logo.png")
 
     selected_date = st.slider(
         "Select the Date Range",
