@@ -27,7 +27,7 @@ st.markdown(
 )
 
 home_path = pt.cwd()
-df = pd.read_csv(home_path / "data\Input_Sales_Data_v2.csv", index_col="Id")
+df = pd.read_csv(home_path / pt("data/Input_Sales_Data_v2.csv"), index_col="Id")
 data = pd.DataFrame(preprocess(df))
 
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
