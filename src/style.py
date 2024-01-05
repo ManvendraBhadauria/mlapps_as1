@@ -22,7 +22,7 @@ background-color: white;
 }
 
 [class="st-emotion-cache-10trblm e1nzilvr1"]{
-font-size: 70px;
+font-size: 65px;
 	font-family: Arial Black, Gadget, sans-serif;
 	background-image: -webkit-linear-gradient(90deg, #ffffff 5%, #e8e8e8 5%);
 	background-clip: text;
@@ -63,6 +63,41 @@ color:white;
 }
 [d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"]{
 color:Black;
+}
+
+[class="st-emotion-cache-16txtl3 eczjsme4"]{
+padding: 2rem 1.5rem;
+}
+[class="st-emotion-cache-1v0mbdj e115fcil1"]{
+width:210px;
+}
+[class="st-emotion-cache-b218v0 e1nzilvr5"]{
+font-size:16px;
+}
+p {
+    font-size: 14px;
+}
+[class="StyledThumbValue st-emotion-cache-1iusqyk ew7r33m2"]{
+font-size:10px;
+}
+[class="st-emotion-cache-1inwz65 ew7r33m0"]{
+font-size:10px;
+}
+[class="st-bl st-ak st-bm st-bn st-bo st-ar st-bp st-bq st-br"]{
+font-size:14px;
+}
+.st-emotion-cache-1iusqyk {
+padding-left: 4px;
+}
+[data-testid="stMarkdownContainer"]{
+font-weight:bold;
+}
+[class="st-emotion-cache-17b17hr e1nzilvr5"]{
+margin-top:5px;
+}
+[class="block-container st-emotion-cache-z5fcl4 ea3mdgi2"]{
+margin-top:-100px;
+padding-bottom:120px;
 }
 
 </style>

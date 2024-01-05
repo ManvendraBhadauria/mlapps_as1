@@ -1,3 +1,4 @@
+from multiprocessing import allow_connection_pickling
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -37,27 +38,41 @@ date_max = data["Date"].max().date()
 
 with st.sidebar:
     st.image("./assets/logo.png")
+    st.markdown("---")
+    st.markdown("<h3>Filters</h3>", unsafe_allow_html=True)
 
-    selected_date = st.slider(
-        "Select the Date Range",
-        min_value=date_min,
-        max_value=date_max,
-        value=(date_min, date_max),
-    )
-    st.write(
-        f"Min Date : {selected_date[0].strftime('%Y-%m-%d')}",
-    )
-    st.write(
-        f"Max Date : {selected_date[1].strftime('%Y-%m-%d')}",
-    )
+    col1, col2 = st.columns([0.40, 0.60])
+    with col1:
+        cate = st.selectbox(
+            "", options=list(data["Category"].unique()), placeholder="Choose a Category"
+        )
+
+    with col2:
+        selected_date = st.slider(
+            "",
+            min_value=date_min,
+            max_value=date_max,
+            value=(date_min, date_max),
+        )
+    st.markdown("---")
+    with st.container():
+        st.write(f"**Category :** {cate}")
+
+        st.write(
+            f"**Min Date :** {selected_date[0].strftime('%Y-%m-%d')}",
+        )
+        st.write(
+            f"**Max Date :** {selected_date[1].strftime('%Y-%m-%d')}",
+        )
+
 
 selected_date = (pd.to_datetime(selected_date[0]), pd.to_datetime(selected_date[1]))
 
 filtered_data = data[
     (data["Date"].dt.date >= selected_date[0].date())
     & (data["Date"].dt.date <= selected_date[1].date())
+    & (data["Category"] == cate)
 ]
-
 processed_data = make_data(filtered_data)
 st.dataframe(processed_data, width=1200)
 

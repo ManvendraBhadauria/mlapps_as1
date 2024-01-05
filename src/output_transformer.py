@@ -9,8 +9,11 @@ def make_data(data):
     if data is None or data.empty:
         return pd.DataFrame()
     else:
-        temp = data.groupby(["Manufacturer"])[["Volume", "Value"]].sum().reset_index()
-        return pd.DataFrame(temp)
+        temp = pd.DataFrame(
+            data.groupby(["Manufacturer"])[["Volume", "Value"]].sum().reset_index()
+        )
+        sorted_df = temp.sort_values(by="Value", ascending=False)
+        return pd.DataFrame(sorted_df)
 
 
 @st.cache_data
@@ -48,7 +51,7 @@ def make_graph(filtered_data, date_min, date_max):
         xaxis_title="Month",
         yaxis_title="Volume",
         xaxis={"type": "category"},
-        width=1030,
+        width=981,
     )
 
     return fig
