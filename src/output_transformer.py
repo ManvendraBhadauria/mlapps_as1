@@ -13,6 +13,10 @@ def make_data(data):
             data.groupby(["Manufacturer"])[["Volume", "Value"]].sum().reset_index()
         )
         sorted_df = temp.sort_values(by="Value", ascending=False)
+        sorted_df["Market Share %"] = (
+            sorted_df["Value"] / sorted_df["Value"].sum()
+        ) * 100
+
         return pd.DataFrame(sorted_df)
 
 

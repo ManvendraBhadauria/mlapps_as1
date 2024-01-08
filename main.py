@@ -74,7 +74,10 @@ filtered_data = data[
     & (data["Category"] == cate)
 ]
 processed_data = make_data(filtered_data)
-st.dataframe(processed_data, width=1200)
+st.dataframe(
+    processed_data.style.background_gradient(cmap="Blues", subset=["Market Share %"]),
+    width=1200,
+)
 
 
 fig = make_graph(filtered_data, selected_date[0], selected_date[1])
