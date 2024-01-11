@@ -1,9 +1,7 @@
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import streamlit as st
-import plotly.graph_objs as go
+import pandas as pd
 import plotly.express as px
+import plotly.graph_objs as go
 
 
 def create_line_chart(data):
@@ -69,11 +67,7 @@ def create_trend_line_vol(filtered_data):
     )
 
     # Add trendline
-    fig.add_trace(
-        go.Scatter(
-            x=filtered_data["Volume"], y=trendline, mode="lines", name="Trendline"
-        )
-    )
+    fig.add_trace(go.Scatter(x=filtered_data["Volume"], y=trendline, mode="lines", name="Trendline"))
 
     # Update layout for axis titles and labels
     fig.update_layout(xaxis=dict(title="Volume Sales"), yaxis=dict(title="Price"))
@@ -101,11 +95,7 @@ def create_trend_line_value(filtered_data):
     )
 
     # Add trendline
-    fig.add_trace(
-        go.Scatter(
-            x=filtered_data["Value"], y=trendline, mode="lines", name="Trendline"
-        )
-    )
+    fig.add_trace(go.Scatter(x=filtered_data["Value"], y=trendline, mode="lines", name="Trendline"))
 
     # Update layout for axis titles and labels
     fig.update_layout(xaxis=dict(title="Value Sales"), yaxis=dict(title="Price"))
@@ -147,12 +137,8 @@ def create_line_chart_bottom(data):
 
 
 def create_bar_chart(filtered_data):
-    filtered_data["Month"] = (
-        pd.to_datetime(filtered_data["Date"]).dt.to_period("M").astype(str)
-    )
-    average_sales_per_month_sku = (
-        filtered_data.groupby(["Month", "SKU Name"])["Value"].mean().reset_index()
-    )
+    filtered_data["Month"] = pd.to_datetime(filtered_data["Date"]).dt.to_period("M").astype(str)
+    average_sales_per_month_sku = filtered_data.groupby(["Month", "SKU Name"])["Value"].mean().reset_index()
     fig = px.bar(
         average_sales_per_month_sku,
         x="Month",

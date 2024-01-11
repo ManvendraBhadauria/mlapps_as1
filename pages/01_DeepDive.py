@@ -1,21 +1,19 @@
-from pickletools import optimize
-from click import option
-from pyparsing import line
-import streamlit as st
-from src.pages_style import css_pages
 from pathlib import Path as pt
-import pandas as pd
-from src.preprocessor import preprocess
-from src.delta_calculator import delta_cal
-from src.deepdive_plotter import (
-    create_line_chart,
-    create_pie_chart,
-    create_trend_line_vol,
-    create_trend_line_value,
-    create_line_chart_bottom,
-    create_bar_chart,
-)
 
+import pandas as pd
+import streamlit as st
+
+from src.deepdive_plotter import (
+    create_bar_chart,
+    create_line_chart,
+    create_line_chart_bottom,
+    create_pie_chart,
+    create_trend_line_value,
+    create_trend_line_vol,
+)
+from src.delta_calculator import delta_cal
+from src.pages_style import css_pages
+from src.preprocessor import preprocess
 
 st.set_page_config(
     "Deep Dive",

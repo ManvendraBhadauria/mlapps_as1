@@ -1,16 +1,11 @@
-from multiprocessing import allow_connection_pickling
-import streamlit as st
-import pandas as pd
-import numpy as np
-from src.preprocessor import preprocess
-from src.output_transformer import make_data
-from src.output_transformer import make_graph
-from src.style import css_code
-import datetime
-import plotly.express as px
-import plotly.graph_objects as go
 from pathlib import Path as pt
 
+import pandas as pd
+import streamlit as st
+
+from src.output_transformer import make_data, make_graph
+from src.preprocessor import preprocess
+from src.style import css_code
 
 st.set_page_config(
     page_title="Assignment 1",
@@ -43,9 +38,7 @@ with st.sidebar:
 
     col1, col2 = st.columns([0.40, 0.60])
     with col1:
-        cate = st.selectbox(
-            "", options=list(data["Category"].unique()), placeholder="Choose a Category"
-        )
+        cate = st.selectbox("", options=list(data["Category"].unique()), placeholder="Choose a Category")
 
     with col2:
         selected_date = st.slider(

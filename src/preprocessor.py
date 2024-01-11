@@ -1,7 +1,8 @@
-import pandas as pd
-import numpy as np
-import streamlit as st
 import warnings
+
+import numpy as np
+import pandas as pd
+import streamlit as st
 
 warnings.filterwarnings("ignore")
 
