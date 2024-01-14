@@ -61,7 +61,7 @@ def scenario_bar_chart(data_list):
         color="Name",
         barmode="group",
         labels={"value": "Value", "variable": "Variable", "Name": "Scenario"},
-        title="Bar Graph of Revenue, Cost, and Profit by Scenario",
+        title="Comparison of Selected Scenarios",
         width=1400,
         text="value",
     )
